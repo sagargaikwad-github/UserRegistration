@@ -23,8 +23,7 @@ public class MainActivity2 extends AppCompatActivity {
 //        String t=bundle.getString("Email");
 //        String u=bundle.getString("Phone");
 //
-//        name.setText(" "+s+" "+t);
-//        email.setText("Phone :" +u);
+
 
         Bundle bundle=getIntent().getExtras();
         String s=bundle.getString("Name");
