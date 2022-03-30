@@ -195,8 +195,8 @@
 
     <Button
         android:id="@+id/register3"
-        android:layout_width="145dp"
-        android:layout_height="51dp"
+        android:layout_width="176dp"
+        android:layout_height="57dp"
         android:layout_marginTop="36dp"
         android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/ok"
@@ -204,7 +204,7 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:cornerRadius="30dp"
+        app:cornerRadius="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordt" />

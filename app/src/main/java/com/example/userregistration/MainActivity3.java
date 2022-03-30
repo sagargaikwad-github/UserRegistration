@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.ThemedSpinnerAdapter;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -17,6 +18,7 @@ public class MainActivity3 extends AppCompatActivity {
     EditText name,email,password,phone;
     Button btn;
     String Name,Email,Password,Phone;
+
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     @Override
@@ -37,10 +39,12 @@ public class MainActivity3 extends AppCompatActivity {
         Phone=phone.getText().toString().trim();
         Password=password.getText().toString().trim();
 
+        SharedPreferences sharedPreferences=getSharedPreferences("Register",MODE_PRIVATE);
+        //SharedPreferences sharedPreferences=getSharedPreferences("Reg",MODE_PRIVATE);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Name=name.getText().toString();
                 Email=email.getText().toString().trim();
                 Phone=phone.getText().toString().trim();
@@ -71,6 +75,16 @@ public class MainActivity3 extends AppCompatActivity {
                 {
                     emailvalid();
                 }
+
+                SharedPreferences.Editor myEdit=sharedPreferences.edit();
+                myEdit.putString("Name",Name);
+                myEdit.putString("Email",Email);
+                myEdit.putString("Phone",Phone);
+                myEdit.putString("Password",Password);
+                myEdit.apply();
+
+
+
 
             }
 
@@ -109,9 +123,32 @@ public class MainActivity3 extends AppCompatActivity {
                     phone.requestFocus();
                 }
             }
+
         });
-    }
+
+        SharedPreferences get=getSharedPreferences("Register",MODE_PRIVATE);
+        String e1=get.getString("Name","");
+        String e2=get.getString("Email","");
+        String e3=get.getString("Phone","");
+        String e4=get.getString("Password","");
+
+        name.setText(e1);
+        email.setText(e2);
+        phone.setText(e3);
+        password.setText(e4);
 
 
+       if(!e1.equals("") && !e2.equals(" "))
+       {
+           Intent intent2=new Intent(MainActivity3.this,MainActivity2.class);
+           startActivity(intent2);
+       }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+    }
+}
 
