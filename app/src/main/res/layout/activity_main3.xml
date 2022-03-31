@@ -66,19 +66,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="250dp"
         android:layout_marginEnd="30dp"
         app:boxStrokeColor="#FFFFFF"
         app:endIconMode="clear_text"
+        app:endIconTint="@color/white"
+        app:errorEnabled="true"
         app:helperText="*Required Field"
         app:helperTextEnabled="true"
         app:helperTextTextColor="#FF0000"
         app:hintTextColor="#FFFFFF"
-        app:endIconTint="@color/white"
-        app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/name3"
@@ -197,7 +197,7 @@
         android:id="@+id/register3"
         android:layout_width="176dp"
         android:layout_height="57dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/ok"
         android:text="Register"

@@ -3,21 +3,11 @@ package com.example.userregistration;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
     EditText fname,lname,email,password,phone,address;
@@ -32,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         fname=findViewById(R.id.fname);
         lname=findViewById(R.id.lname);
         email=findViewById(R.id.email);
-        password=findViewById(R.id.password);
+        password=findViewById(R.id.password_layout);
         phone=findViewById(R.id.phone);
         address=findViewById(R.id.address);
         btn=findViewById(R.id.btn);

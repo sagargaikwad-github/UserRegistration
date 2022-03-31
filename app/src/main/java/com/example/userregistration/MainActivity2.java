@@ -15,6 +15,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +30,9 @@ import com.karumi.dexter.listener.single.PermissionListener;
 public class MainActivity2 extends AppCompatActivity {
     TextView name,email,phone,tv,addphoto;
     ImageView img;
+    Button logout;
+
+    int log;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,7 @@ public class MainActivity2 extends AppCompatActivity {
         tv=findViewById(R.id.regtv);
         addphoto=findViewById(R.id.addphoto);
         img=findViewById(R.id.img);
+        logout=findViewById(R.id.logout);
 
 //        Bundle bundle=getIntent().getExtras();
 //        String s=bundle.getString("Name");;
@@ -91,6 +96,25 @@ public class MainActivity2 extends AppCompatActivity {
                 }
             }
         });
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                SharedPreferences.Editor logout=get.edit();
+//                logout.putString("Name","");
+//                logout.putString("Email","");
+//                logout.putString("Phone","");
+//                logout.putString("Password","");
+//                logout.apply();
+
+                SharedPreferences islogin=getSharedPreferences("Login",MODE_PRIVATE);
+                SharedPreferences.Editor editor=islogin.edit();
+                editor.putString("login","LOGOUT");
+                editor.apply();
+
+                Intent logout1=new Intent(MainActivity2.this,LoginActivity.class);
+                startActivity(logout1);
+            }
+        });
     }
 
 //    @Override
@@ -137,6 +161,7 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        finishAffinity();
 
 
 

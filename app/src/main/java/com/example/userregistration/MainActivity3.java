@@ -104,7 +104,7 @@ public class MainActivity3 extends AppCompatActivity {
             {
                 if(Patterns.PHONE.matcher(Phone).matches() && Phone.length()>9 && Phone.length()<11)
                 {
-                    Intent intent=new Intent(MainActivity3.this, MainActivity2.class);
+                    Intent intent=new Intent(MainActivity3.this, LoginActivity.class);
                     intent.putExtra("Name",String.valueOf(Name));
                     intent.putExtra("Email",String.valueOf(Email));
                     intent.putExtra("Phone",String.valueOf(Phone));
@@ -148,6 +148,7 @@ public class MainActivity3 extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        finishAffinity();
 
     }
 }
