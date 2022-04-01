@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -31,6 +32,7 @@ public class MainActivity2 extends AppCompatActivity {
     TextView name,email,phone,tv,addphoto;
     ImageView img;
     Button logout;
+    FloatingActionButton camera;
 
     int log;
 
@@ -42,10 +44,10 @@ public class MainActivity2 extends AppCompatActivity {
         name=findViewById(R.id.w1);
         email=findViewById(R.id.email2);
         phone=findViewById(R.id.phone2);
-        tv=findViewById(R.id.regtv);
-        addphoto=findViewById(R.id.addphoto);
+       // addphoto=findViewById(R.id.addphoto);
         img=findViewById(R.id.img);
         logout=findViewById(R.id.logout);
+        camera=findViewById(R.id.fab_camera);
 
 //        Bundle bundle=getIntent().getExtras();
 //        String s=bundle.getString("Name");;
@@ -67,23 +69,37 @@ public class MainActivity2 extends AppCompatActivity {
 
 
 
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences.Editor myEdit=get.edit();
-                myEdit.putString("Name","");
-                myEdit.putString("Email","");
-                myEdit.putString("Phone","");
-                myEdit.putString("Password","");
-                myEdit.apply();
+//        tv.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                SharedPreferences.Editor myEdit=get.edit();
+//                myEdit.putString("Name","");
+//                myEdit.putString("Email","");
+//                myEdit.putString("Phone","");
+//                myEdit.putString("Password","");
+//                myEdit.apply();
+//
+//                Intent intent3=new Intent(MainActivity2.this,MainActivity3.class);
+//                startActivity(intent3);
+//
+//            }
+//        });
 
-                Intent intent3=new Intent(MainActivity2.this,MainActivity3.class);
-                startActivity(intent3);
+//        addphoto.setOnClickListener(new View.OnClickListener() {
+//            @RequiresApi(api = Build.VERSION_CODES.M)
+//            @Override
+//            public void onClick(View view) {
+//                if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+//
+//                    requestPermissions(new String[]{Manifest.permission.CAMERA}, 10);
+//                } else {
+//                    Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//                    startActivityForResult(cameraIntent, 1);
+//                }
+//            }
+//        });
 
-            }
-        });
-
-        addphoto.setOnClickListener(new View.OnClickListener() {
+        camera.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View view) {
@@ -142,7 +158,6 @@ public class MainActivity2 extends AppCompatActivity {
         {
             Bitmap bitmap= (Bitmap) data.getExtras().get("data");
             img.setImageBitmap(bitmap);
-
         }
     }
 

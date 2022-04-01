@@ -58,9 +58,13 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent=new Intent(LoginActivity.this,MainActivity2.class);
                     startActivity(intent);
                 }
+                else if(e.equals(""))
+                {
+                    Toast.makeText(LoginActivity.this, "Please provide username and password", Toast.LENGTH_SHORT).show();
+                }
                 else
                 {
-                    Toast.makeText(LoginActivity.this, "Invalid id and password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Please provide username and password", Toast.LENGTH_SHORT).show();
                 }
             }
         });

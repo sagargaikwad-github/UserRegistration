@@ -4,7 +4,7 @@
        <!--parent="Theme.MaterialComponents.DayNight.NoActionBar-->
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimaryVariant">#038EFD</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -23,5 +23,11 @@
         <item name="android:textColor">@android:color/holo_green_dark</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">italic</item>
+    </style>
+
+
+    <style name="text" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 </resources>
